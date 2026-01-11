@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-screen bg-gray-200 text-gray-900;
+  }
+
+  html.dark body {
+    @apply bg-gray-950 text-gray-50;
+  }
+}

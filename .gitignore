@@ -1,0 +1,12 @@
+# Discord_chat (Spring Boot)
+Discord_chat/target/
+Discord_chat/.mvn/
+Discord_chat/*.log
+Discord_chat/.classpath
+Discord_chat/.project
+Discord_chat/.settings/
+
+# front_discord (React)
+front_discord/node_modules/
+front_discord/build/
+front_discord/.env
