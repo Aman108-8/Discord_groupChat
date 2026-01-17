@@ -12,6 +12,15 @@ public class MvcConfig implements WebMvcConfigurer {
         // Serve uploaded images from "uploads" directory
     	// /uploads/abc.jpg
     	// Maps to local folder:
+    	// it tells spring When a browser asks for THIS URL, serve a FILE from HERE
+    	/*
+    	  		Without registry				With registry
+    	 
+    	  Need controller to serve image	Browser fetches directly
+    	  More server load							Faster
+    	  Manual response handling				  Automatic
+    	  Bad for large files					  Optimized
+    	*/
         registry.addResourceHandler("/uploads/**")
                 .addResourceLocations("file:uploads/");
     }

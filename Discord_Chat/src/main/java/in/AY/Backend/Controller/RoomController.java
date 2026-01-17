@@ -159,6 +159,7 @@ public class RoomController {
 	}
 	
 	//{filename:.+} allows dots in filename
+	// It is called AFTER upload, when chat renders
 	@GetMapping("/uploads/{filename:.+}")
     public ResponseEntity<byte[]> getImage(@PathVariable String filename) {
         try {
