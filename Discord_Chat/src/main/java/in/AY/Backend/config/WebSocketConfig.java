@@ -46,6 +46,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer
 	
 }
 
+
 /*
  * When you type a message:
  * Client SENDS message

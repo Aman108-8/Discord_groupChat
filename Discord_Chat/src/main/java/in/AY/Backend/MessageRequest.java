@@ -13,10 +13,11 @@ import lombok.Setter;
 @Setter
 public class MessageRequest {
 	//Frontend sends JSON over WebSocket
-	//Spring automatically converts JSON → MessageRequest objec
+	//Spring automatically converts JSON → MessageRequest object
 	
 	private String content,sender,roomId;
 	private LocalDateTime localDateTime;
+	private String type;
 	
 	public String getContent() {
 		return content;

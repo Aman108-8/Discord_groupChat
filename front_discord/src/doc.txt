@@ -1,0 +1,49 @@
+We use useRef when:
+
+1) We want to connect React code to a real DOM element
+input ↔ button
+scroll container ↔ auto-scroll
+2) We need memory that must survive re-renders
+timers
+sockets
+previous values
+3) We do NOT want UI to re-render
+performance
+control-only data
+
+📌 So the accurate sentence is:
+useRef is for DOM access and persistent non-UI memory
+
+
+
+file.type.startsWith("image/")
+Reason:
+1) User may rename .exe to .jpg
+2) Browser MIME type exposes real type
+3) Backend expects image
+
+
+//image flow of uplaoding
+Frontend selects file
+↓
+Preview via Base64
+↓
+Upload via multipart
+↓
+Backend saves file
+↓
+DB stores only URL
+↓
+WebSocket broadcasts message
+↓
+Frontend receives instantly
+
+
+
+why use Base64
+    Because:
+    No backend call needed
+    Instant preview
+    Temporary
+    ❌ Bad for storage
+    ❌ Increases size by ~33%

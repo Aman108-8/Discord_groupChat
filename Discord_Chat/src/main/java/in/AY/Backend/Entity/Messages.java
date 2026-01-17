@@ -15,7 +15,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Messages {
+public class Messages 
+{
+	private String sender;
+	private String content;
+	private LocalDateTime timeStamp;
+	private String type;
 	
 	public String getSender() {
 		return sender;
@@ -28,10 +33,6 @@ public class Messages {
 	public LocalDateTime getTimeStamp() {
 		return timeStamp;
 	}
-
-	private String sender;
-	private String content;
-	private LocalDateTime timeStamp;
 	
 	public Messages(String sender, String content) {
 		this.sender = sender;
@@ -51,6 +52,14 @@ public class Messages {
 
 	public void setTimeStamp(LocalDateTime timeStamp) {
 		this.timeStamp = timeStamp;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }
 
