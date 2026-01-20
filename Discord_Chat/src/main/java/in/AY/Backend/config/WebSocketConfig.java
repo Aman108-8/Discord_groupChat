@@ -37,7 +37,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer
 		// this is the websocket handshake endpoint
 		// client first CONNECTS to this URL to establish websocket connection
 		registry.addEndpoint("/chat")
-		.setAllowedOrigins("http://localhost:5173")	//allows websocket connection only from this frontend origin (CORS)
+		.setAllowedOrigins(AppConstants.FRONT_END_BASE_URL)	//allows websocket connection only from this frontend origin (CORS)
 		.withSockJS();
 		// SockJS provides fallback options
 		// if browser does not support WebSocket,

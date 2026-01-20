@@ -27,11 +27,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import in.AY.Backend.Entity.Messages;
 import in.AY.Backend.Entity.Rooms;
+import in.AY.Backend.config.AppConstants;
 import in.AY.Backend.service.RoomServices;
 
 @RestController
 @RequestMapping("/api/v1/rooms")
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin(AppConstants.FRONT_END_BASE_URL)
 public class RoomController {
 
 	@Autowired

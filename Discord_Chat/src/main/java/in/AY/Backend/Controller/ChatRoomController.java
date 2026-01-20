@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import in.AY.Backend.MessageRequest;
 import in.AY.Backend.Entity.Messages;
 import in.AY.Backend.Entity.Rooms;
+import in.AY.Backend.config.AppConstants;
 import in.AY.Backend.service.RoomServices;
 
 /*
@@ -20,7 +21,7 @@ import in.AY.Backend.service.RoomServices;
  * WebSocket is used only for live data after page is ready
 */
 @Controller
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin(AppConstants.FRONT_END_BASE_URL)
 public class ChatRoomController {
 	
 	@Autowired
