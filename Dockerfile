@@ -18,13 +18,30 @@
 #
 #ENTRYPOINT ["java","-jar","app.jar"]
 
+#
+#FROM eclipse-temurin:17-jdk-alpine
+#
+#WORKDIR /app
+#
+#COPY target/*.jar app.jar
+#
+#EXPOSE 8080
+#
+#ENTRYPOINT ["java","-jar","target/Discord_Chat-1.0.jar"]
+
 
 FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+# Copy everything
+COPY . .
 
+# Build the Spring Boot jar
+RUN ./mvnw clean package -DskipTests
+
+# Expose port
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","target/Discord_Chat-1.0.jar"]
+# Run the app
+CMD ["java", "-jar", "target/Discord_Chat-1.0.jar"]
