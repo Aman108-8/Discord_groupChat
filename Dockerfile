@@ -34,8 +34,11 @@ FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
-# Copy everything
+# Copy project files
 COPY . .
+
+# Give execute permission to mvnw
+RUN chmod +x mvnw
 
 # Build the Spring Boot jar
 RUN ./mvnw clean package -DskipTests
